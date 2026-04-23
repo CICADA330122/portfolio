@@ -53,7 +53,7 @@ body{font-family:'Inter',sans-serif;background:var(--white);color:var(--dark);ov
   min-height:100vh;display:flex;align-items:center;
   position:relative;overflow:hidden;
   background:linear-gradient(135deg,#f0f4ff 0%,#fff 45%,#eff6ff 100%);
-  padding:100px 60px 100px;
+  padding:100px 60px 80px;
 }
 .hero-mesh{position:absolute;inset:0;pointer-events:none;z-index:0}
 .mesh-circle{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 70%)}
@@ -91,43 +91,54 @@ body{font-family:'Inter',sans-serif;background:var(--white);color:var(--dark);ov
 .social-btn:hover{border-color:var(--blue);transform:translateY(-5px) scale(1.05);box-shadow:0 14px 32px rgba(37,99,235,.3)}
 .hero-visual{display:flex;align-items:center;justify-content:center;position:relative;animation:slideRight .9s cubic-bezier(.22,1,.36,1) .2s both}
 @keyframes slideRight{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}
-.ring{position:absolute;border-radius:50%;border:1.5px dashed rgba(37,99,235,.2)}
-.ring-1{width:430px;height:430px;animation:spin-slow 30s linear infinite}
-.ring-2{width:360px;height:360px;border-style:solid;border-color:rgba(37,99,235,.07);border-width:8px;animation:spin-reverse 20s linear infinite}
-.ring-3{width:500px;height:500px;border-color:rgba(96,165,250,.1);animation:spin-slow 45s linear infinite reverse}
+.ring{position:absolute;border-radius:50%}
+.ring-1{width:400px;height:400px;border:1.5px dashed rgba(37,99,235,.15);animation:spin-slow 35s linear infinite}
+.ring-2{width:320px;height:320px;border:6px solid rgba(37,99,235,.05);animation:spin-reverse 22s linear infinite}
+.ring-3{width:490px;height:490px;border:1px solid rgba(96,165,250,.08);animation:spin-slow 50s linear infinite reverse}
 @keyframes spin-slow{to{transform:rotate(360deg)}}
 @keyframes spin-reverse{to{transform:rotate(-360deg)}}
-.orbit-dot{position:absolute;width:10px;height:10px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px rgba(37,99,235,.6)}
-.orbit-dot:nth-child(1){top:-5px;left:50%;transform:translateX(-50%)}
-.orbit-dot:nth-child(2){bottom:-5px;left:50%;transform:translateX(-50%);background:var(--blue-light)}
-.orbit-dot:nth-child(3){left:-5px;top:50%;transform:translateY(-50%);width:7px;height:7px;background:#bfdbfe}
-.float-card{position:absolute;background:#fff;border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 10px 40px rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.1);white-space:nowrap;z-index:10}
-.fc-1{top:12%;left:-10%;animation:floatCard1 5s ease-in-out infinite}
-.fc-2{bottom:15%;right:-8%;animation:floatCard2 6s ease-in-out infinite 1s}
-.fc-3{top:65%;left:-6%;animation:floatCard1 7s ease-in-out infinite .5s}
-@keyframes floatCard1{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes floatCard2{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
-.fc-icon{width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
-.fc-icon.green{background:#10b981}.fc-icon.amber{background:#f59e0b}
-.fc-label{font-size:.65rem;color:var(--gray);font-weight:500}
-.fc-val{font-size:.88rem;color:var(--dark);font-weight:700}
-.profile-wrap{position:relative;z-index:5;width:300px;height:300px}
-.profile-outer{width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,var(--blue-pale) 0%,#fff 60%,#bfdbfe 100%);padding:6px;box-shadow:0 0 0 12px rgba(37,99,235,.06),0 30px 60px rgba(37,99,235,.22);animation:image-float 7s ease-in-out infinite;position:relative}
-@keyframes image-float{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-14px) rotate(.5deg)}66%{transform:translateY(-6px) rotate(-.5deg)}}
-.profile-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--blue-ghost);border:3px solid #fff}
-.profile-inner img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.profile-outer::after{content:'';position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.4) 0%,transparent 50%);pointer-events:none}
-.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--gray);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;z-index:2;animation:fade-hint 1s ease 1.5s both}
-@keyframes fade-hint{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
-.scroll-line{width:1.5px;height:40px;background:linear-gradient(to bottom,var(--blue),transparent);animation:scroll-pulse 2s ease-in-out infinite}
-@keyframes scroll-pulse{0%,100%{opacity:.4;height:40px}50%{opacity:1;height:55px}}
-.stats-bar{background:#fff;border-top:1px solid rgba(37,99,235,.08);padding:0 60px}
-.stats-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;padding:22px 0}
-.stat-item{flex:1;text-align:center;padding:0 24px;border-right:1px solid rgba(37,99,235,.08)}
+.orbit-dot{position:absolute;border-radius:50%;box-shadow:0 0 10px rgba(37,99,235,.5)}
+.orbit-dot:nth-child(1){width:11px;height:11px;background:var(--blue);top:-5.5px;left:50%;transform:translateX(-50%)}
+.orbit-dot:nth-child(2){width:8px;height:8px;background:var(--blue-light);bottom:-4px;left:50%;transform:translateX(-50%)}
+.orbit-dot:nth-child(3){width:7px;height:7px;background:#93c5fd;left:-3.5px;top:50%;transform:translateY(-50%)}
+.float-card{position:absolute;background:#fff;border-radius:16px;padding:13px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 16px 48px rgba(37,99,235,.14),0 2px 8px rgba(37,99,235,.05);border:1px solid rgba(37,99,235,.08);white-space:nowrap;z-index:10}
+.fc-1{top:8%;left:-16%;animation:floatCard1 5.5s ease-in-out infinite}
+.fc-2{bottom:14%;right:-14%;animation:floatCard2 6.5s ease-in-out infinite .8s}
+.fc-3{top:66%;left:-12%;animation:floatCard1 7s ease-in-out infinite .4s}
+@keyframes floatCard1{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+@keyframes floatCard2{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(14px) rotate(-1deg)}}
+.fc-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.fc-icon.blue{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;box-shadow:0 4px 12px rgba(37,99,235,.4)}
+.fc-icon.green{background:linear-gradient(135deg,#059669,#10b981);color:#fff;box-shadow:0 4px 12px rgba(16,185,129,.35)}
+.fc-icon.amber{background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;box-shadow:0 4px 12px rgba(245,158,11,.35)}
+.fc-label{font-size:.62rem;color:var(--gray);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+.fc-val{font-size:.9rem;color:var(--dark);font-weight:800}
+/* Profile */
+.profile-wrap{position:relative;z-index:5;display:flex;align-items:center;justify-content:center}
+.profile-halo{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.16) 0%,rgba(96,165,250,.07) 50%,transparent 70%);animation:halo-pulse 4s ease-in-out infinite;z-index:0}
+@keyframes halo-pulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.1);opacity:1}}
+.profile-outer{width:310px;height:310px;border-radius:50%;padding:4px;background:conic-gradient(from 0deg,#2563eb 0%,#60a5fa 35%,#bfdbfe 50%,#60a5fa 65%,#2563eb 100%);box-shadow:0 0 0 10px rgba(37,99,235,.07),0 30px 70px rgba(37,99,235,.28);animation:image-float 7s ease-in-out infinite;position:relative;z-index:2;transition:box-shadow .4s}
+.profile-outer:hover{box-shadow:0 0 0 16px rgba(37,99,235,.1),0 40px 80px rgba(37,99,235,.38)}
+@keyframes image-float{0%,100%{transform:translateY(0)}33%{transform:translateY(-18px)}66%{transform:translateY(-8px)}}
+.profile-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--blue-pale),var(--blue-ghost));border:4px solid #fff;position:relative}
+.profile-inner img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .5s ease}
+.profile-outer:hover .profile-inner img{transform:scale(1.06)}
+.profile-inner::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.25) 0%,transparent 55%);pointer-events:none}
+/* Scroll hint */
+.scroll-hint{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--gray);font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;z-index:2;animation:fade-hint 1s ease 1.8s both}
+@keyframes fade-hint{from{opacity:0;transform:translateX(-50%) translateY(12px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.scroll-line{width:1.5px;height:36px;background:linear-gradient(to bottom,var(--blue),transparent);animation:scroll-pulse 2s ease-in-out infinite}
+@keyframes scroll-pulse{0%,100%{opacity:.35;height:36px}50%{opacity:1;height:50px}}
+/* Stats bar — clean separate strip */
+.stats-bar{background:#fff;border-top:1px solid rgba(37,99,235,.07)}
+.stats-inner{max-width:1200px;margin:0 auto;display:flex;align-items:stretch;padding:0 60px}
+.stat-item{flex:1;text-align:center;padding:28px 16px;border-right:1px solid rgba(37,99,235,.07);transition:background .2s;cursor:default;position:relative;overflow:hidden}
+.stat-item::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue-light));transition:width .3s;border-radius:1px}
+.stat-item:hover::after{width:50%}
+.stat-item:hover{background:var(--blue-ghost)}
 .stat-item:last-child{border-right:none}
-.stat-item:hover{transform:translateY(-2px)}
-.stat-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--blue-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
-.stat-lbl{font-size:.75rem;color:var(--gray);font-weight:500;margin-top:2px}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--blue-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1}
+.stat-lbl{font-size:.72rem;color:var(--gray);font-weight:500;margin-top:5px;letter-spacing:.03em}
 
 /* ══════════════════════════════
    SHARED SECTION STYLES
@@ -399,7 +410,7 @@ footer{background:var(--dark);padding:50px 60px}
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge"><span class="badge-dot"></span> Full Stack Developer</div>
-      <h1 class="hero-title">Hi, I'm<br><span class="name-line">Achraf Hamiani</span></h1>
+      <h1 class="hero-title">Hi, I'm<br><span class="name-line">Achraf imad</span></h1>
       <p class="hero-desc">
         Passionate <strong>Computer Science student</strong> from Algeria building modern web applications
         with HTML, CSS, JavaScript, PHP, Python — diving deep into
@@ -423,19 +434,26 @@ footer{background:var(--dark);padding:50px 60px}
         <span class="orbit-dot"></span>
       </div>
       <div class="ring ring-2"></div>
+
+      <!-- Floating info cards — only 2, well-positioned -->
       <div class="float-card fc-1">
-        <div class="fc-icon"><i class="fas fa-code"></i></div>
-        <div><div class="fc-label">Experience</div><div class="fc-val">3+ Years Coding</div></div>
+        <div class="fc-icon blue"><i class="fas fa-code"></i></div>
+        <div>
+          <div class="fc-label">Stack</div>
+          <div class="fc-val">Full Stack Dev</div>
+        </div>
       </div>
       <div class="float-card fc-2">
-        <div class="fc-icon green"><i class="fas fa-check"></i></div>
-        <div><div class="fc-label">Projects Done</div><div class="fc-val">5+ Projects</div></div>
+        <div class="fc-icon green"><i class="fas fa-rocket"></i></div>
+        <div>
+          <div class="fc-label">Goal</div>
+          <div class="fc-val">AI Developer</div>
+        </div>
       </div>
-      <div class="float-card fc-3">
-        <div class="fc-icon amber"><i class="fas fa-brain"></i></div>
-        <div><div class="fc-label">Goal</div><div class="fc-val">AI Developer</div></div>
-      </div>
+
+      <!-- Profile image with glow halo -->
       <div class="profile-wrap">
+        <div class="profile-halo"></div>
         <div class="profile-outer">
           <div class="profile-inner">
             <img src="icons/pfp.jpg" alt="Achraf Hamiani"
@@ -450,15 +468,17 @@ footer{background:var(--dark);padding:50px 60px}
     </div>
   </div>
   <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="stat-item"><span class="stat-num">5+</span><div class="stat-lbl">Projects Built</div></div>
-      <div class="stat-item"><span class="stat-num">3+</span><div class="stat-lbl">Years Coding</div></div>
-      <div class="stat-item"><span class="stat-num">6+</span><div class="stat-lbl">Tech Stacks</div></div>
-      <div class="stat-item"><span class="stat-num">100%</span><div class="stat-lbl">Passion</div></div>
-    </div>
-  </div>
 </section>
+
+<!-- Stats bar — clean strip outside hero -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-num">5+</span><div class="stat-lbl">Projects Built</div></div>
+    <div class="stat-item"><span class="stat-num">3+</span><div class="stat-lbl">Years Coding</div></div>
+    <div class="stat-item"><span class="stat-num">6+</span><div class="stat-lbl">Tech Stacks</div></div>
+    <div class="stat-item"><span class="stat-num">100%</span><div class="stat-lbl">Passion</div></div>
+  </div>
+</div>
 
 <!-- ████ ABOUT ████ -->
 <section id="about" class="section">
